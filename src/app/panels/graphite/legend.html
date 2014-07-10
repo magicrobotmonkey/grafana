@@ -13,19 +13,19 @@
       </a>
       <span ng-if="panel.legend.values">
         <span ng-show="panel.legend.current">
-          &nbsp;&nbsp;Current:  {{series.current}}&nbsp;
+          &nbsp;&nbsp;Current:  {{series.current | number}}&nbsp;
         </span>
         <span ng-show="panel.legend.min">
-          &nbsp;&nbsp;Min: {{series.min}}&nbsp;
+          &nbsp;&nbsp;Min: {{series.min | number}}&nbsp;
         </span>
         <span ng-show="panel.legend.max">
-          &nbsp;&nbsp;Max: {{series.max}}&nbsp;
+          &nbsp;&nbsp;Max: {{series.max | number}}&nbsp;
         </span>
         <span ng-show="panel.legend.total">
-          &nbsp;&nbsp;Total: {{series.total}}&nbsp;
+          &nbsp;&nbsp;Total: {{series.total | number}}&nbsp;
         </span>
         <span ng-show="panel.legend.avg">
-          &nbsp;&nbsp;Avg: {{series.avg}}&nbsp;
+          &nbsp;&nbsp;Avg: {{series.avg | number}}&nbsp;
         </span>
       </span>
     </span>
