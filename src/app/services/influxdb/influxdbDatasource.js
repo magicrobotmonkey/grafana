@@ -1,9 +1,10 @@
 define([
   'angular',
   'underscore',
+  'config',
   'kbn'
 ],
-function (angular, _, kbn) {
+function (angular, _, config, kbn) {
   'use strict';
 
   var module = angular.module('kibana.services');
@@ -190,7 +191,12 @@ function (angular, _, kbn) {
     function getInfluxTime(date) {
       if (_.isString(date)) {
         if (date === 'now') {
-          return 'now()';
+          if (config.now_delay_minutes > 0) {
+            return 'now() - ' + config.now_delay_minutes + 'm';
+          }
+          else {
+            return 'now()';
+          }
         }
         else if (date.indexOf('now') >= 0) {
           return date.substring(4);
